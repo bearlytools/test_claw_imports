@@ -14,5 +14,5 @@ Enum Model uint8 {
 Struct Truck {
 	Manufacturer manufacturers.Manufacturer @0
 	Model Model @1
-	Year uint16 @3
+	Year uint16 @2
 }
