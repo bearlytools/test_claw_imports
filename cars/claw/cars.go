@@ -61,6 +61,8 @@ var ModelByValue = map[uint8 ]string{
     3: "ModelS",
 } 
 
+
+
 type Car struct {
    s *structs.Struct
 }
@@ -72,6 +74,24 @@ func NewCar() Car {
     return Car{
         s: s,
     }
+}
+
+// XXXNewFrom creates a new Car from our internal Struct representation.
+// As with all things marked XXX*, this should not be used and has not compatibility
+// guarantees.
+//
+// Deprecated: This is not actually deprecated, but it should not be used directly nor
+// show up in any documentation.
+func XXXNewFrom(s *structs.Struct) Car {
+    return Car{s: s}
+} 
+
+func (x Car) Manufacturer() manufacturers.Manufacturer {
+    return manufacturers.Manufacturer(structs.MustGetNumber[uint8](x.s, 0))
+}
+
+func (x Car) SetManufacturer(value manufacturers.Manufacturer) {
+    structs.MustSetNumber(x.s, 0, uint8(value))
 }  
 
 func (x Car) Model() Model {
@@ -91,15 +111,15 @@ func (x Car) SetYear(value uint16) {
     structs.MustSetNumber(x.s, 2, value)
 }  
 
+// ClawStruct returns a reflection type representing the Struct.
+func (x Car) ClawStruct() reflect.Struct{
+   return reflect.XXXNewStruct(x.s)
+}
+
 // XXXDescr returns the Struct's descriptor. This should only be used
 // by the reflect package and is has no compatibility promises like all XXX fields.
 func (x Car) XXXDescr() reflect.StructDescr {
     return XXXPackageDescr.Structs()[0]
-}
-
-// ClawStruct returns a reflection type representing the Struct.
-func (x Car) ClawStruct() reflect.Struct{
-   return reflect.XXXNewStruct(x.s)
 } 
 
 // Everything below this line is internal details.
@@ -110,8 +130,8 @@ var mappingCar = &mapping.Map{
     Fields: []*mapping.FieldDescr{
         {
             Name: "Manufacturer",
-            Type: field.FTUnknown,
-            IsEnum: false,
+            Type: field.FTUint8,
+            IsEnum: true,
             FieldNum: 0,
         },
         {
@@ -181,6 +201,7 @@ var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
             FieldList: []reflect.FieldDescr{
                 reflect.XXXFieldDescrImpl{
                     FD: mappingCar.ByName("Manufacturer"),
+                    EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
                 },
                 reflect.XXXFieldDescrImpl{
                     FD: mappingCar.ByName("Model"),
