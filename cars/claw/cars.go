@@ -69,7 +69,7 @@ type Car struct {
 
 // NewCar creates a new instance of Car.
 func NewCar() Car {
-    s := structs.New(0, mappingCar)
+    s := structs.New(0, XXXMappingCar)
     s.XXXSetNoZeroTypeCompression()
     return Car{
         s: s,
@@ -131,7 +131,7 @@ func (x Car) XXXDescr() reflect.StructDescr {
 } 
 
 // Everything below this line is internal details.
-var mappingCar = &mapping.Map{
+var XXXMappingCar = &mapping.Map{
     Name: "Car",
     Pkg: "cars",
     Path: "github.com/bearlytools/test_claw_imports/cars/claw",
@@ -208,15 +208,15 @@ var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
             Path: "github.com/bearlytools/test_claw_imports/cars/claw",
             FieldList: []reflect.FieldDescr{
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingCar.ByName("Manufacturer"),
+                    FD: XXXMappingCar.ByName("Manufacturer"),
                     EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
                 },
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingCar.ByName("Model"),
+                    FD: XXXMappingCar.ByName("Model"),
                     EG: XXXEnumGroups.ByName("Model"),
                 },
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingCar.ByName("Year"),
+                    FD: XXXMappingCar.ByName("Year"),
                 },
             },
         },  

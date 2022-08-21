@@ -69,7 +69,7 @@ type Truck struct {
 
 // NewTruck creates a new instance of Truck.
 func NewTruck() Truck {
-    s := structs.New(0, mappingTruck)
+    s := structs.New(0, XXXMappingTruck)
     s.XXXSetNoZeroTypeCompression()
     return Truck{
         s: s,
@@ -131,7 +131,7 @@ func (x Truck) XXXDescr() reflect.StructDescr {
 } 
 
 // Everything below this line is internal details.
-var mappingTruck = &mapping.Map{
+var XXXMappingTruck = &mapping.Map{
     Name: "Truck",
     Pkg: "trucks",
     Path: "github.com/bearlytools/test_claw_imports/trucks",
@@ -208,15 +208,15 @@ var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
             Path: "github.com/bearlytools/test_claw_imports/trucks",
             FieldList: []reflect.FieldDescr{
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingTruck.ByName("Manufacturer"),
+                    FD: XXXMappingTruck.ByName("Manufacturer"),
                     EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
                 },
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingTruck.ByName("Model"),
+                    FD: XXXMappingTruck.ByName("Model"),
                     EG: XXXEnumGroups.ByName("Model"),
                 },
                 reflect.XXXFieldDescrImpl{
-                    FD: mappingTruck.ByName("Year"),
+                    FD: XXXMappingTruck.ByName("Year"),
                 },
             },
         },  
