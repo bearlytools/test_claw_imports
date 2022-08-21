@@ -116,6 +116,14 @@ func (x Truck) ClawStruct() reflect.Struct{
    return reflect.XXXNewStruct(x.s)
 }
 
+// XXXGetStruct returns the internal Struct representation. Like all XXX* types/methods,
+// this should not be used and has no compatibility guarantees.
+//
+// Deprecated: Not deprectated, but should not be used and should not show up in documentation.
+func (x Truck) XXXGetStruct() *structs.Struct {
+    return x.s
+}
+
 // XXXDescr returns the Struct's descriptor. This should only be used
 // by the reflect package and is has no compatibility promises like all XXX fields.
 func (x Truck) XXXDescr() reflect.StructDescr {
