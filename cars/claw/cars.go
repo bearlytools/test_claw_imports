@@ -17,6 +17,9 @@ import (
 // SyntaxVersion is the major version of the Claw language that is being rendered.
 const SyntaxVersion = 0
 
+var _package = "cars"
+var _packagePath = "github.com/bearlytools/test_claw_imports/cars/claw"
+
 
 type Model uint8
 
@@ -126,11 +129,14 @@ func (x Car) XXXGetStruct() *structs.Struct {
 
 // XXXDescr returns the Struct's descriptor. This should only be used
 // by the reflect package and is has no compatibility promises like all XXX fields.
+//
+// Deprecated: No deprecated, but shouldn't be used directly or show up in documentation.
 func (x Car) XXXDescr() reflect.StructDescr {
     return XXXPackageDescr.Structs()[0]
 } 
 
 // Everything below this line is internal details.
+// Deprecated: Not deprecated, but shouldn't be used directly or show up in documentation.
 var XXXMappingCar = &mapping.Map{
     Name: "Car",
     Pkg: "cars",
@@ -140,12 +146,14 @@ var XXXMappingCar = &mapping.Map{
             Name: "Manufacturer",
             Type: field.FTUint8,
             IsEnum: true,
+            EnumGroup: "manufacturers.Manufacturer",
             FieldNum: 0,
         },
         {
             Name: "Model",
             Type: field.FTUint8,
             IsEnum: true,
+            EnumGroup: "Model",
             FieldNum: 1,
         },
         {
@@ -156,8 +164,8 @@ var XXXMappingCar = &mapping.Map{
         },
     },
 }
-var _package = "cars"
 
+// Deprecated: Not deprecated, but shouldn't be used directly or show up in documentation.
 var XXXEnumGroups reflect.EnumGroups = reflect.XXXEnumGroupsImpl{
     List:   []reflect.EnumGroup{
         reflect.XXXEnumGroupImpl{
@@ -194,6 +202,7 @@ func init() {
     }
 }  
 
+// Deprecated: No deprecated, but shouldn't be used directly or show up in documentation.
 var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
     Name: "cars",
     Path: "github.com/bearlytools/test_claw_imports/cars/claw",
