@@ -145,6 +145,8 @@ var XXXMappingCar = &mapping.Map{
         {
             Name: "Manufacturer",
             Type: field.FTUint8,
+            Package: "manufacturers",
+            FullPath: "github.com/bearlytools/claw/testing/imports/vehicles/claw/manufacturers",
             IsEnum: true,
             EnumGroup: "manufacturers.Manufacturer",
             FieldNum: 0,
@@ -152,6 +154,8 @@ var XXXMappingCar = &mapping.Map{
         {
             Name: "Model",
             Type: field.FTUint8,
+            Package: "cars",
+            FullPath: "github.com/bearlytools/test_claw_imports/cars/claw",
             IsEnum: true,
             EnumGroup: "Model",
             FieldNum: 1,
@@ -159,6 +163,8 @@ var XXXMappingCar = &mapping.Map{
         {
             Name: "Year",
             Type: field.FTUint16,
+            Package: "cars",
+            FullPath: "github.com/bearlytools/test_claw_imports/cars/claw",
             IsEnum: false,
             FieldNum: 2,
         },
