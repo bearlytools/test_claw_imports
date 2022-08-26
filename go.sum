@@ -9,6 +9,8 @@ github.com/bearlytools/claw v0.0.0-20220823225408-f62bd2c13daf h1:KP2SrYifRYgSXo
 github.com/bearlytools/claw v0.0.0-20220823225408-f62bd2c13daf/go.mod h1:1dGOKyCtPlo/f3qtQz7RMcR2V3nEwKAE57NVitTSnNc=
 github.com/bearlytools/claw v0.0.0-20220823225536-c223d803158f h1:XQhNYq6kJrknjclZG3iNYPH4ey5oF/lW1QDklgHpYw8=
 github.com/bearlytools/claw v0.0.0-20220823225536-c223d803158f/go.mod h1:1dGOKyCtPlo/f3qtQz7RMcR2V3nEwKAE57NVitTSnNc=
+github.com/bearlytools/claw v0.0.0-20220826170001-bce9c8cc947b h1:/SEn3HWJeA+oy8AwzH7DCtQ2Fj5PMD+a2i3qgKjjMRE=
+github.com/bearlytools/claw v0.0.0-20220826170001-bce9c8cc947b/go.mod h1:ye/y6d1+N3dQNkgxsAovj/whkcsUnK2HSIp5Ur3+4MY=
 github.com/beeker1121/goque v2.1.0+incompatible/go.mod h1:L6dOWBhDOnxUVQsb0wkLve0VCnt2xJW/MI8pdRX4ANw=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
