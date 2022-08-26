@@ -132,7 +132,7 @@ func (x Truck) XXXGetStruct() *structs.Struct {
 //
 // Deprecated: No deprecated, but shouldn't be used directly or show up in documentation.
 func (x Truck) XXXDescr() reflect.StructDescr {
-    return XXXPackageDescr.Structs()[0]
+    return XXXPackageDescr.Structs().Get(0)
 } 
 
 // Everything below this line is internal details.
@@ -216,25 +216,27 @@ var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
         manufacturers.XXXPackageDescr,  
     }, 
     EnumGroupsDescrs: XXXEnumGroups, 
-    StructsDescrs: []reflect.StructDescr{
-        reflect.XXXStructDescrImpl{
-            Name: "Truck",
-            Pkg: "trucks",
-            Path: "github.com/bearlytools/test_claw_imports/trucks",
-            FieldList: []reflect.FieldDescr{
-                reflect.XXXFieldDescrImpl{
-                    FD: XXXMappingTruck.ByName("Manufacturer"),
-                    EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
+    StructsDescrs: reflect.XXXStructDescrsImpl{
+        Descrs: []reflect.StructDescr{
+            reflect.XXXStructDescrImpl{
+                Name: "Truck",
+                Pkg: "trucks",
+                Path: "github.com/bearlytools/test_claw_imports/trucks",
+                FieldList: []reflect.FieldDescr{
+                    reflect.XXXFieldDescrImpl{
+                        FD: XXXMappingTruck.ByName("Manufacturer"),
+                        EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
+                    },
+                    reflect.XXXFieldDescrImpl{
+                        FD: XXXMappingTruck.ByName("Model"),
+                        EG: XXXEnumGroups.ByName("Model"),
+                    },
+                    reflect.XXXFieldDescrImpl{
+                        FD: XXXMappingTruck.ByName("Year"),
+                    },
                 },
-                reflect.XXXFieldDescrImpl{
-                    FD: XXXMappingTruck.ByName("Model"),
-                    EG: XXXEnumGroups.ByName("Model"),
-                },
-                reflect.XXXFieldDescrImpl{
-                    FD: XXXMappingTruck.ByName("Year"),
-                },
-            },
-        },  
+            }, 
+        },
     },  
 }
 
