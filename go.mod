@@ -2,7 +2,7 @@ module github.com/bearlytools/test_claw_imports
 
 go 1.19
 
-require github.com/bearlytools/claw v0.0.0-20220826174509-482ce81efbbb
+require github.com/bearlytools/claw v0.0.0-20220828193001-8a693333eeb7
 
 require (
 	github.com/golang/protobuf v1.5.2 // indirect

@@ -216,28 +216,11 @@ var XXXPackageDescr reflect.PackageDescr = reflect.XXXPackageDescrImpl{
         manufacturers.XXXPackageDescr,  
     }, 
     EnumGroupsDescrs: XXXEnumGroups, 
-    StructsDescrs: reflect.XXXStructDescrsImpl{
-        Descrs: []reflect.StructDescr{
-            reflect.XXXStructDescrImpl{
-                Name: "Truck",
-                Pkg: "trucks",
-                Path: "github.com/bearlytools/test_claw_imports/trucks",
-                FieldList: []reflect.FieldDescr{
-                    reflect.XXXFieldDescrImpl{
-                        FD: XXXMappingTruck.ByName("Manufacturer"),
-                        EG: XXXEnumGroups.ByName("manufacturers.Manufacturer"),
-                    },
-                    reflect.XXXFieldDescrImpl{
-                        FD: XXXMappingTruck.ByName("Model"),
-                        EG: XXXEnumGroups.ByName("Model"),
-                    },
-                    reflect.XXXFieldDescrImpl{
-                        FD: XXXMappingTruck.ByName("Year"),
-                    },
-                },
-            }, 
+    StructsDescrs: reflect.XXXNewStructDescrsImpl(
+        []reflect.StructDescr {
+            reflect.XXXNewStructDescrImpl(XXXMappingTruck), 
         },
-    },  
+    ),  
 }
 
 // PackageDescr returns a PackageDescr for this package.
