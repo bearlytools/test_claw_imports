@@ -195,7 +195,7 @@ var XXXEnumGroupModel = reflect.XXXEnumGroupImpl{
             EnumNumber: 3,
         },
     },
-}  
+}
 
 // Deprecated: Not deprecated, but shouldn't be used directly or show up in documentation.
 var XXXEnumGroups reflect.EnumGroups = reflect.XXXEnumGroupsImpl{
