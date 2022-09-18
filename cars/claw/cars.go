@@ -5,8 +5,6 @@
 package cars
 
 import (
-    "sync"
-
     "github.com/bearlytools/claw/languages/go/mapping"
     "github.com/bearlytools/claw/languages/go/reflect"
     "github.com/bearlytools/claw/languages/go/reflect/runtime"
@@ -173,42 +171,68 @@ var XXXMappingCar = &mapping.Map{
     },
 }
 
+
+
+var XXXEnumGroupModel = reflect.XXXEnumGroupImpl{
+    GroupName: "Model",
+    GroupLen: 4,
+    EnumSize: 8,
+    Descrs: []reflect.EnumValueDescr{
+        reflect.XXXEnumValueDescrImpl{
+            EnumName: "ModelUnknown",
+            EnumNumber: 0,
+        },
+        reflect.XXXEnumValueDescrImpl{
+            EnumName: "GT",
+            EnumNumber: 1,
+        },
+        reflect.XXXEnumValueDescrImpl{
+            EnumName: "Vienza",
+            EnumNumber: 2,
+        },
+        reflect.XXXEnumValueDescrImpl{
+            EnumName: "ModelS",
+            EnumNumber: 3,
+        },
+    },
+}  
+
 // Deprecated: Not deprecated, but shouldn't be used directly or show up in documentation.
 var XXXEnumGroups reflect.EnumGroups = reflect.XXXEnumGroupsImpl{
     List:   []reflect.EnumGroup{
-        reflect.XXXEnumGroupImpl{
-            GroupName: "Model",
-            GroupLen: 4,
-            EnumSize: 8,
-            Descrs: []reflect.EnumValueDescr{
-                reflect.XXXEnumValueDescrImpl{
-                    EnumName: "ModelUnknown",
-                    EnumNumber: 0,
-                },
-                reflect.XXXEnumValueDescrImpl{
-                    EnumName: "GT",
-                    EnumNumber: 1,
-                },
-                reflect.XXXEnumValueDescrImpl{
-                    EnumName: "Vienza",
-                    EnumNumber: 2,
-                },
-                reflect.XXXEnumValueDescrImpl{
-                    EnumName: "ModelS",
-                    EnumNumber: 3,
-                },
-            },
+        XXXEnumGroupModel,
+    },
+    Lookup: map[string]reflect.EnumGroup{
+        "Model": XXXEnumGroupModel,
+    },
+} 
+var XXXStructDescrCar = &reflect.XXXStructDescrImpl{
+    Name:      "Car",
+    Pkg:       XXXMappingCar.Pkg,
+    Path:      XXXMappingCar.Path,
+    Mapping:   XXXMappingCar,
+    FieldList: []reflect.FieldDescr {
+        
+        reflect.XXXFieldDescrImpl{
+            FD: XXXMappingCar.Fields[0],
+            EG: manufacturers.XXXEnumGroupManufacturer,
+        },
+         
+        
+        reflect.XXXFieldDescrImpl{
+            FD:  XXXMappingCar.Fields[1],
+            EG: XXXEnumGroupModel, 
+        }, 
+        
+        reflect.XXXFieldDescrImpl{
+            FD:  XXXMappingCar.Fields[2],  
         },  
     },
-    Lookup: map[string]reflect.EnumGroup{},
 }
 
-func init() {
-    x := XXXEnumGroups.(reflect.XXXEnumGroupsImpl)
-    for _, g := range x.List {
-        x.Lookup[g.Name()] = g
-    }
-}  
+var XXXStructDescrs = map[string]*reflect.XXXStructDescrImpl{
+    "Car":  XXXStructDescrCar,
+}
 
 // Deprecated: No deprecated, but shouldn't be used directly or show up in documentation.
 var XXXPackageDescr reflect.PackageDescr = &reflect.XXXPackageDescrImpl{
@@ -218,11 +242,11 @@ var XXXPackageDescr reflect.PackageDescr = &reflect.XXXPackageDescrImpl{
         manufacturers.XXXPackageDescr,  
     }, 
     EnumGroupsDescrs: XXXEnumGroups, 
-    StructsDescrs: reflect.XXXNewStructDescrsImpl(
-        []reflect.StructDescr {
-            reflect.XXXNewStructDescrImpl(XXXMappingCar), 
+    StructsDescrs: reflect.XXXStructDescrsImpl{
+        Descrs: []reflect.StructDescr{
+            XXXStructDescrCar,
         },
-    ),  
+    },  
 }
 
 // PackageDescr returns a PackageDescr for this package.
@@ -233,30 +257,4 @@ func PackageDescr() reflect.PackageDescr {
 // Registers our package description with the runtime.
 func init() {
     runtime.RegisterPackage(XXXPackageDescr)
-}
-
-var haveInit sync.Once
-
-// XXXInit initializes reflect descriptors that depend on external references after those
-// references have been loaded.
-func XXXInit() {
-    haveInit.Do(
-        func() {
-                pDescr := runtime.PackageDescr("github.com/bearlytools/claw/testing/imports/vehicles/claw/manufacturers")
-                if pDescr == nil {
-                    panic("empty package descriptor for github.com/bearlytools/claw/testing/imports/vehicles/claw/manufacturers")
-                }
-                if err := pDescr.XXXInit(); err != nil {
-                    panic(err)
-                }
-            if err := XXXPackageDescr.XXXInit(); err != nil {
-                panic(err)
-            }
-        },
-    )
-}
-
-// This init should always be the last init() in the file.
-func init() {
-    XXXInit()
 }
