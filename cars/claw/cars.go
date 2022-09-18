@@ -46,7 +46,7 @@ func (x Model) XXXEnumValueDescr() reflect.EnumValueDescr {
 const (
     ModelUnknown Model = 0
     GT Model = 1
-    Vienza Model = 2
+    Venza Model = 2
     ModelS Model = 3
 )
 
@@ -54,13 +54,13 @@ var ModelByName = map[string]Model{
     "GT": 1,
     "ModelS": 3,
     "ModelUnknown": 0,
-    "Vienza": 2,
+    "Venza": 2,
 }
 
 var ModelByValue = map[uint8 ]string{
     0: "ModelUnknown",
     1: "GT",
-    2: "Vienza",
+    2: "Venza",
     3: "ModelS",
 } 
 
@@ -189,7 +189,7 @@ var XXXEnumGroupModel = reflect.XXXEnumGroupImpl{
             EnumSize: 8,
         },
         reflect.XXXEnumValueDescrImpl{
-            EnumName: "Vienza",
+            EnumName: "Venza",
             EnumNumber: 2,
             EnumSize: 8,
         },
