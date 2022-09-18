@@ -181,18 +181,22 @@ var XXXEnumGroupModel = reflect.XXXEnumGroupImpl{
         reflect.XXXEnumValueDescrImpl{
             EnumName: "ModelUnknown",
             EnumNumber: 0,
+            EnumSize: 8,
         },
         reflect.XXXEnumValueDescrImpl{
             EnumName: "F100",
             EnumNumber: 1,
+            EnumSize: 8,
         },
         reflect.XXXEnumValueDescrImpl{
             EnumName: "Tundra",
             EnumNumber: 2,
+            EnumSize: 8,
         },
         reflect.XXXEnumValueDescrImpl{
             EnumName: "Cybertruck",
             EnumNumber: 3,
+            EnumSize: 8,
         },
     },
 }
