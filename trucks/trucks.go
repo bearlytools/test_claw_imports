@@ -96,6 +96,7 @@ func (x Truck) Manufacturer() manufacturers.Manufacturer {
 
 func (x Truck) SetManufacturer(value manufacturers.Manufacturer) Truck {
     structs.MustSetNumber(x.s, 0, uint8(value))
+    return x
 }  
 
 func (x Truck) Model() Model {
@@ -104,6 +105,7 @@ func (x Truck) Model() Model {
 
 func (x Truck) SetModel(value Model) Truck {
     structs.MustSetNumber(x.s, 1, uint8(value))
+    return x
 } 
 
 
@@ -113,6 +115,7 @@ func (x Truck) Year() uint16 {
 
 func (x Truck) SetYear(value uint16) Truck {
     structs.MustSetNumber(x.s, 2, value)
+    return x
 }  
 
 // ClawStruct returns a reflection type representing the Struct.
