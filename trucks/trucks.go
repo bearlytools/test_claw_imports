@@ -41,8 +41,7 @@ func (x Model) XXXEnumGroup() reflect.EnumGroup {
 func (x Model) XXXEnumValueDescr() reflect.EnumValueDescr {
     return XXXEnumGroups.Get(0).ByValue(uint16(x))
 }
-
-
+// This is a set of all constants representing enumerated values for enum Model.
 const (
     ModelUnknown Model = 0
     F100 Model = 1
@@ -50,6 +49,7 @@ const (
     Cybertruck Model = 3
 )
 
+// ModelByName converts a string representing the enumerator into a Model.
 var ModelByName = map[string]Model{
     "Cybertruck": 3,
     "F100": 1,
@@ -57,7 +57,8 @@ var ModelByName = map[string]Model{
     "Tundra": 2,
 }
 
-var ModelByValue = map[uint8 ]string{
+// ModelByValue converts a uint8 representing a Model into its string name.
+var ModelByValue = map[uint8]string{
     0: "ModelUnknown",
     1: "F100",
     2: "Tundra",
@@ -93,7 +94,7 @@ func (x Truck) Manufacturer() manufacturers.Manufacturer {
     return manufacturers.Manufacturer(structs.MustGetNumber[uint8](x.s, 0))
 }
 
-func (x Truck) SetManufacturer(value manufacturers.Manufacturer) {
+func (x Truck) SetManufacturer(value manufacturers.Manufacturer) Truck {
     structs.MustSetNumber(x.s, 0, uint8(value))
 }  
 
@@ -101,7 +102,7 @@ func (x Truck) Model() Model {
     return Model(structs.MustGetNumber[uint8](x.s, 1))
 }
 
-func (x Truck) SetModel(value Model) {
+func (x Truck) SetModel(value Model) Truck {
     structs.MustSetNumber(x.s, 1, uint8(value))
 } 
 
@@ -110,7 +111,7 @@ func (x Truck) Year() uint16 {
     return structs.MustGetNumber[uint16](x.s, 2)
 }
 
-func (x Truck) SetYear(value uint16) {
+func (x Truck) SetYear(value uint16) Truck {
     structs.MustSetNumber(x.s, 2, value)
 }  
 
@@ -148,26 +149,26 @@ var XXXMappingTruck = &mapping.Map{
             Type: field.FTUint8,
             Package: "manufacturers",
             FullPath: "github.com/bearlytools/claw/testing/imports/vehicles/claw/manufacturers",
+            FieldNum: 0,
             IsEnum: true,
             EnumGroup: "manufacturers.Manufacturer",
-            FieldNum: 0,
         },
         {
             Name: "Model",
             Type: field.FTUint8,
             Package: "trucks",
             FullPath: "github.com/bearlytools/test_claw_imports/trucks",
+            FieldNum: 1,
             IsEnum: true,
             EnumGroup: "Model",
-            FieldNum: 1,
         },
         {
             Name: "Year",
             Type: field.FTUint16,
             Package: "trucks",
             FullPath: "github.com/bearlytools/test_claw_imports/trucks",
-            IsEnum: false,
             FieldNum: 2,
+            IsEnum: false,
         },
     },
 }
